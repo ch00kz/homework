@@ -1,4 +1,15 @@
 # Homework
+## Usage
+
+```
+>>> from homework import calculate_marked_up_value
+>>> calculate_marked_up_value(1299.99, 3, "food")
+1591.58
+>>> calculate_marked_up_value(5432.00, 1, "pharmaceutical")
+6199.81
+>>> calculate_marked_up_value(12456.95, 4, "books")
+13707.63
+```
 
 ## Instructions
 
