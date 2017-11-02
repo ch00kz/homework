@@ -1,6 +1,11 @@
 # Homework
 ## Usage
 
+1. Import `calculate_marked_up_value` method
+
+2. Call `calculate_marked_up_value` on desired values.
+
+Example:
 ```
 >>> from homework import calculate_marked_up_value
 >>> calculate_marked_up_value(1299.99, 3, "food")
