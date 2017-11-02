@@ -37,9 +37,3 @@ def __get_type_mark_up_rate(item_type):
         'electronic': 0.02
     }
     return rates.get(item_type, 0)
-
-print( calculate_marked_up_value(1299.99, 3, "food") )
-print( calculate_marked_up_value(5432.00, 1, "pharmaceutical") )
-print( calculate_marked_up_value(12456.95, 4, "books") )
-
-
