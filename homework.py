@@ -6,9 +6,27 @@ def calculate_marked_up_value(base_price, num_people, item_type):
             num_people -- number of people who have to do work on item
             item_type -- type of item
     """
-    pass
+    # constant rates
+    FLAT_MARK_UP_RATE = 0.05
+    PER_PERSON_MARK_UP_RATE = 0.012
 
-def __get_mark_up_rate(item_type):
+    # get various mark up rates
+    flat_mark_up = base_price * FLAT_MARK_UP_RATE
+    person_mark_up_rate = num_people * PER_PERSON_MARK_UP_RATE
+    type_mark_up_rate = __get_type_mark_up_rate(item_type)
+
+    # update base_price with flat mark up.
+    base_price += flat_mark_up
+
+    person_mark_up = base_price * person_mark_up_rate
+    type_mark_up = base_price * type_mark_up_rate
+
+    marked_up_price = base_price + person_mark_up + type_mark_up
+
+    # TODO: round to marked_up_price to decimal places
+    return marked_up_price
+
+
 def __get_type_mark_up_rate(item_type):
     """ Accepts item type and returns associated mark up rate. """
     rates = {
