@@ -14,16 +14,16 @@ def calculate_marked_up_value(base_price, num_people, item_type):
     person_mark_up_rate = num_people * PER_PERSON_MARK_UP_RATE
     type_mark_up_rate = __get_type_mark_up_rate(item_type)
 
-    # calculate flat mark up and update base_price 
+    # calculate flat mark up and subtotal 
     flat_mark_up = base_price * FLAT_MARK_UP_RATE
-    base_price += flat_mark_up
+    subtotal = base_price + flat_mark_up
 
     # calculate other mark ups using updated base_price
-    person_mark_up = base_price * person_mark_up_rate
-    type_mark_up = base_price * type_mark_up_rate
+    person_mark_up = subtotal * person_mark_up_rate
+    type_mark_up = subtotal * type_mark_up_rate
 
     # calculate final marked_up_price
-    marked_up_price = base_price + person_mark_up + type_mark_up
+    marked_up_price = subtotal + person_mark_up + type_mark_up
 
     # round to marked_up_price to decimal places
     return float("%.2f" % marked_up_price)
@@ -37,3 +37,9 @@ def __get_type_mark_up_rate(item_type):
         'electronic': 0.02
     }
     return rates.get(item_type, 0)
+
+print( calculate_marked_up_value(1299.99, 3, "food") )
+print( calculate_marked_up_value(5432.00, 1, "pharmaceutical") )
+print( calculate_marked_up_value(12456.95, 4, "books") )
+
+
