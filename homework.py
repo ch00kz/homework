@@ -23,8 +23,8 @@ def calculate_marked_up_value(base_price, num_people, item_type):
 
     marked_up_price = base_price + person_mark_up + type_mark_up
 
-    # TODO: round to marked_up_price to decimal places
-    return marked_up_price
+    # round to marked_up_price to decimal places
+    return float("%.2f" % marked_up_price)
 
 
 def __get_type_mark_up_rate(item_type):
