@@ -9,6 +9,7 @@ def calculate_marked_up_value(base_price, num_people, item_type):
     pass
 
 def __get_mark_up_rate(item_type):
+def __get_type_mark_up_rate(item_type):
     """ Accepts item type and returns associated mark up rate. """
     rates = {
         'pharmaceutical': 0.075,
